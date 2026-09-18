@@ -28,3 +28,16 @@ VCF/subsample_vcf_evenly.sh \
 Use `-f` to replace an existing output and index. The input does not need to be
 indexed. Requires `bcftools`, `awk`, `sort`, `cmp`, and `mktemp`. Compression
 can use additional threads by setting `BCFTOOLS_THREADS`.
+
+
+### General
+
+#### `column_extract.sh`
+
+Extract a column from a text file (can be compressed). Specify the column separator (`-s`), the column header title (`-c`) and file name. Header
+presumed to be first line.
+
+e.g.
+`extract-column -c SYMBOL variants.txt`
+`extract-column -s ',' -c gene records.csv.gz`
+`extract-column -s $'\t' -n 20 -c Consequence variants.tsv.bgz`
